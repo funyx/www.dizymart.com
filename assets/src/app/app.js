@@ -15,7 +15,7 @@ angular.module( 'sailng', [
     'sailng.messages'
 ])
 
-.config( function myAppConfig ( $stateProvider, $urlRouterProvider, $locationProvider ) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider){
     // $urlRouterProvider.otherwise( '/home' );
     $urlRouterProvider.otherwise(function ($injector, $location) {
         if ($location.$$url === '/') {
@@ -27,12 +27,10 @@ angular.module( 'sailng', [
         }
     });
     $locationProvider.html5Mode(true);
-})
-
-.run( function run () {
+}])
+.run(function(){
     moment.locale('en');
 })
-
-.controller( 'AppCtrl', function AppCtrl ( $scope, config ) {
+.controller( 'AppCtrl',['$scope', 'config', function($scope, config){
     config.currentUser = window.currentUser;
-});
+}]);

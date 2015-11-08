@@ -1,7 +1,5 @@
-angular.module( 'sailng.messages', [
-])
-
-.config(function config( $stateProvider ) {
+angular.module( 'sailng.messages', [])
+.config(['$stateProvider', function($stateProvider){
     $stateProvider.state( 'messages', {
         url: '/messages',
         views: {
@@ -18,9 +16,9 @@ angular.module( 'sailng.messages', [
             }
         }
     });
-})
+}])
 
-.controller( 'MessagesController', function MessagesController( $scope, $sailsSocket, lodash, config, titleService, MessageModel, messages ) {
+.controller( 'MessagesController',['$scope', '$sailsSocket', 'lodash', 'config', 'titleService', 'MessageModel', 'messages', function($scope, $sailsSocket, lodash, config, titleService, MessageModel, messages){
     titleService.setTitle('Messages');
     $scope.newMessage = {};
     $scope.messages = messages;
@@ -52,4 +50,4 @@ angular.module( 'sailng.messages', [
             $scope.newMessage = {};
         });
     };
-});
+}]);
