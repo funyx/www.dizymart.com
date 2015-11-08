@@ -1,0 +1,19 @@
+#!/bin/sh
+error_exit (){
+  echo "$1" 1>&2
+  exit 1
+}
+
+echo -n "Enter commit message": 
+read commit_message
+cd /Users/mimo/www/dizymart || error_exit "error changing directory!. now exiting..."
+git add -A
+git commit -m "$commit_message"
+git push origin master
+echo "Deploy to production enviroment?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) git push production master; break;;
+        No ) exit;;
+    esac
+done

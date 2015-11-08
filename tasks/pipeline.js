@@ -5,11 +5,10 @@
  * compiled and linked from your views and static HTML files.
  *
  * (Note that you can take advantage of Grunt-style wildcard/glob/splat expressions
- * for matching multiple files, and the ! prefix for excluding files.)
+ * for matching multiple files.)
  */
 
-// Path to public folder
-var tmpPath = '.tmp/public/';
+
 
 // CSS files to inject in order
 //
@@ -23,20 +22,24 @@ var cssFilesToInject = [
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
+  'bower_components/angular/angular.js',
+  'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+  'bower_components/angular-ui-router/release/angular-ui-router.js',
+  'bower_components/sails.io.js/dist/sails.io.js',
+  'bower_components/angularSails/dist/ngsails.io.js',
+  'bower_components/lodash/lodash.js',
+  'bower_components/moment/moment.js',
+  'bower_components/angular-moment/angular-moment.js',
 
-  // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+  //
+  // *->    you might put other dependencies like jQuery or Angular here   <-*
+  //
 
-  // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
-
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
-  'js/**/*.js',
-
-  // Use the "exclude" operator to ignore files
-  // '!js/ignore/these/files/*.js'
+  // All of the rest of your app scripts
+  'src/**/*.js'
 ];
+
+module.exports.jsFilesToInjectNoPathChange = jsFilesToInject;
 
 
 // Client-side HTML templates are injected using the sources below
@@ -49,20 +52,20 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+  // 'templates/**/*.html'
+  'src/**/*.tpl.html'
 ];
-
 
 
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
-module.exports.cssFilesToInject = cssFilesToInject.map(transformPath);
-module.exports.jsFilesToInject = jsFilesToInject.map(transformPath);
-module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
-
-// Transform paths relative to the "assets" folder to be relative to the public
-// folder, preserving "exclude" operators.
-function transformPath(path) {
-  return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
-}
+module.exports.cssFilesToInject = cssFilesToInject.map(function(path) {
+  return '.tmp/public/' + path;
+});
+module.exports.jsFilesToInject = jsFilesToInject.map(function(path) {
+  return '.tmp/public/' + path;
+});
+module.exports.templateFilesToInject = templateFilesToInject.map(function(path) {
+  return 'assets/' + path;
+});
