@@ -1,4 +1,8 @@
-angular.module( 'sailng.home', [])
+angular.module( 'sailng.home', ['ui.router',
+'sails.io',
+'angularMoment',
+'lodash'
+])
 .config(function config( $stateProvider ) {
 	'use strict';
 	$stateProvider.state( 'home', {

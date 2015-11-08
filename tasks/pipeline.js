@@ -36,7 +36,9 @@ var jsFilesToInject = [
   //
 
   // All of the rest of your app scripts
-  'src/**/*.js'
+  'src/common/**/*.js'
+  'src/app/app.js'
+  'src/app/**/*.js'
 ];
 
 module.exports.jsFilesToInjectNoPathChange = jsFilesToInject;
