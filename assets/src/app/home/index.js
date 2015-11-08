@@ -1,7 +1,6 @@
-angular.module( 'sailng.home', [
-])
-
+angular.module( 'sailng.home', [])
 .config(function config( $stateProvider ) {
+	'use strict';
 	$stateProvider.state( 'home', {
 		url: '/home',
 		views: {
@@ -14,5 +13,6 @@ angular.module( 'sailng.home', [
 })
 
 .controller( 'HomeCtrl', function HomeController( $scope, titleService ) {
+	'use strict';
 	titleService.setTitle('Home');
 });
