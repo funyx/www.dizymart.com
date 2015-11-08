@@ -1,5 +1,5 @@
 angular.module( 'sailng.home', ['ui.router'])
-.config(function config( $stateProvider ) {
+.config(['$stateProvider',function($stateProvider) {
 	'use strict';
 	// $stateProvider.state( 'home', {
 	// 	url: '/home',
@@ -10,7 +10,7 @@ angular.module( 'sailng.home', ['ui.router'])
 	// 		}
 	// 	}
 	// });
-})
+}])
 
 .controller( 'HomeCtrl', function HomeController(){// $scope, titleService ) {
 	'use strict';
