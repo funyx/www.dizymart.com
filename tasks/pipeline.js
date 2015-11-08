@@ -36,8 +36,8 @@ var jsFilesToInject = [
   //
 
   // All of the rest of your app scripts
-  'src/common/**/*.js'
-  'src/app/app.js'
+  'src/common/**/*.js',
+  'src/app/app.js',
   'src/app/**/*.js'
 ];
 
