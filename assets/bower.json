@@ -1,0 +1,19 @@
+{
+  "name": "dizymart",
+  "homepage": "https://github.com/funyx/www.dizymart.com",
+  "authors": [
+    "Dimitar Dobchev <ddobchev@gmail.com>"
+  ],
+  "description": "dizymart frontend",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
