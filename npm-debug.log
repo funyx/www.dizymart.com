@@ -7,8 +7,8 @@
 6 info start dizymart@0.0.1
 7 verbose unsafe-perm in lifecycle true
 8 info dizymart@0.0.1 Failed to exec start script
-9 verbose stack Error: dizymart@0.0.1 start: `./backend && sails lift && cd ../frontend && gulp serve`
-9 verbose stack Exit status 126
+9 verbose stack Error: dizymart@0.0.1 start: `node ./backend/app.js & cd ./frontend && gulp serve`
+9 verbose stack Exit status 1
 9 verbose stack     at EventEmitter.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:213:16)
 9 verbose stack     at emitTwo (events.js:87:13)
 9 verbose stack     at EventEmitter.emit (events.js:172:7)
@@ -24,13 +24,13 @@
 14 error node v2.3.4
 15 error npm  v2.12.1
 16 error code ELIFECYCLE
-17 error dizymart@0.0.1 start: `./backend && sails lift && cd ../frontend && gulp serve`
-17 error Exit status 126
-18 error Failed at the dizymart@0.0.1 start script './backend && sails lift && cd ../frontend && gulp serve'.
+17 error dizymart@0.0.1 start: `node ./backend/app.js & cd ./frontend && gulp serve`
+17 error Exit status 1
+18 error Failed at the dizymart@0.0.1 start script 'node ./backend/app.js & cd ./frontend && gulp serve'.
 18 error This is most likely a problem with the dizymart package,
 18 error not with npm itself.
 18 error Tell the author that this fails on your system:
-18 error     ./backend && sails lift && cd ../frontend && gulp serve
+18 error     node ./backend/app.js & cd ./frontend && gulp serve
 18 error You can get their info via:
 18 error     npm owner ls dizymart
 18 error There is likely additional logging output above.
