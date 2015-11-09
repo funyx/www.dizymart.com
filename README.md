@@ -1,2 +1,3 @@
-www.dizymart.com
-platform
+# dizymart
+
+a [Sails](http://sailsjs.org) application
