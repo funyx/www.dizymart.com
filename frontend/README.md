@@ -1,248 +1,162 @@
-# ngMaterial Seed
-Yeoman AngularJS App [![Build Status](https://travis-ci.org/i-heart-php/angular-material-seed.svg)](https://travis-ci.org/i-heart-php/angular-material-seed)
+# Material Design for AngularJS Apps [![Build Status](https://travis-ci.org/angular/material.svg)](https://travis-ci.org/angular/material)
 
-## Begin
+[Material Design](https://www.google.com/design/spec/material-design/) is a specification for a
+unified system of visual, motion, and interaction design that adapts across different devices. Our
+goal is to deliver a lean, lightweight set of AngularJS-native UI elements that implement the
+material design specification for use in Angular single-page applications (SPAs).
 
-Install deps: `npm cache clean && npm install && bower install`
+![venn diagram](https://cloud.githubusercontent.com/assets/210413/5077572/30dfc2f0-6e6a-11e4-9723-07c918128f4f.png)
 
-Run `grunt` for building and deployment. Create `.ftppass` for ftp login info otherwise remove `ftp-deploy` task from `gruntfile.js`.
+This project is in early pre-release. Angular Material is both a reference implementation of
+Material Design and a complementary effort to the [Polymer](https://www.polymer-project.org/)
+project's [Paper Elements](https://www.polymer-project.org/docs/elements/paper-elements.html)
+collection.
 
-For Development Use `grunt serve`, task provies preview and livereload.
+Quick Links:
 
-## Generators
+*  [API & Demos](#demos)
+*  [Contributing](#contributing)
+*  [Building](#building)
+*  [Installing](#installing)
 
-Available generators:
 
-* [angular:controller](#controller)
-* [angular:directive](#directive)
-* [angular:filter](#filter)
-* [angular:route](#route)
-* [angular:service](#service)
-* [angular:provider](#service)
-* [angular:factory](#service)
-* [angular:value](#service)
-* [angular:constant](#service)
-* [angular:decorator](#decorator)
-* [angular:view](#view)
+Please note that using Angular Material requires the use of **Angular 1.3.x** or higher. Angular
+Material is targeted for all browsers with versions n-1; where n is the current browser version.
 
-**Note: Yeoman Generator is to be run from the root directory of this app.**
+## <a name="demos"></a> Online Documentation (and Demos)
 
-### Routes
-Generates a controller and view, and configures a route in `app/scripts/app.js` connecting them.
+<div style="border: 1px solid #ccc">
+  <img src="https://cloud.githubusercontent.com/assets/11819543/10056006/4aee3b68-6207-11e5-8497-a0656f85902a.PNG" alt="Angular Material docs website" style="display:block;">
+</div>
 
-Example:
+- Visit [Material.AngularJS.org](https://material.angularjs.org/) online to review the API, see the
+  components in action with live Demos, and study the Layout system.
+- Or you can build the documentation and demos locally; see
+  [Build Docs & Demos](https://github.com/angular/material/tree/master/docs/README.md) for details.
+
+## <a name="contributing"></a> Contributing
+
+Developers interested in contributing should read the following guidelines:
+
+- [Issue Guidelines](docs/guides/CONTRIBUTING.md#submit)
+- [Contributing Guidelines](docs/guides/CONTRIBUTING.md)
+- [Coding Guidelines](docs/guides/CODING.md)
+- [ChangeLog](CHANGELOG.md)
+
+> Please do **not** ask general questions in an issue. Issues are only to report bugs, request
+  enhancements, or request new features. For general questions and discussions, use the
+  [Angular Material Forum](https://groups.google.com/forum/#!forum/ngmaterial).
+
+It is important to note that for each release, the [ChangeLog](CHANGELOG.md) is a resource that will
+itemize all:
+
+- Bug Fixes
+- New Features
+- Breaking Changes
+
+## <a name="building"></a> Building
+
+Developers can easily build Angular Material using NPM and gulp.
+
+* [Builds - Under the Hood](docs/guides/BUILD.md)
+
+First install or update your local project's **npm** tools:
+
 ```bash
-yo angular:route myroute
+# First install all the NPM tools:
+npm install
+
+# Or update
+npm update
 ```
 
-Produces `app/scripts/controllers/myroute.js`:
-```javascript
-angular.module('myMod').controller('MyrouteCtrl', function ($scope) {
-  // ...
-});
+Then run the **gulp** tasks:
+
+```bash
+# To build `angular-material.js/.css` and `Theme` files in the `/dist` directory
+gulp build
+
+# To build the Angular Material Docs and Demos in `/dist/docs` directory
+gulp docs
 ```
 
-Produces `app/views/myroute.html`:
+For more details on how the build process works and additional commands (available for testing and
+debugging) developers should read the [Build Instructions](docs/guides/BUILD.md).
+
+## <a name="installing"></a> Installing Build (Distribution Files)
+
+#### Bower
+
+For developers not interested in building the Angular Material library... use **bower** to install
+and use the Angular Material distribution files.
+
+Change to your project's root directory.
+
+```bash
+# To get the latest stable version, use Bower from the command line.
+bower install angular-material
+
+# To get the most recent, latest committed-to-master version use:
+bower install angular-material#master
+```
+
+Visit [Bower-Material](https://github.com/angular/bower-material/blob/master/README.md) for more
+details on how to install and use the Angular Material distribution files within your own local
+project.
+
+#### CDN
+
+CDN versions of Angular Material are now available at
+[Google Hosted Libraries](https://developers.google.com/speed/libraries/#angular-material).
+
+With the Google CDN, you will not need to download local copies of the distribution files. Instead
+simply reference the CDN urls to easily use those remote library files. This is especially useful
+when using online tools such as [CodePen](http://codepen.io/), [Plunkr](http://plnkr.co/), or
+[JSFiddle](http://jsfiddle.net/).
+
 ```html
-<p>This is the myroute view</p>
+  <head>
+
+    <!-- Angular Material CSS now available via Google CDN; version 0.11.2 used here -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+
+  </head>
+  <body>
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+
+
+    <!-- Angular Material Javascript now available via Google CDN; version 0.11.2 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+  </body>
 ```
 
-**Explicitly provide route URI**
+> Note that the above sample references the 0.10.0 CDN release. Your version will change based on the latest stable release version.
 
-Example:
-```bash
-yo angular:route myRoute --uri=my/route
-```
+Developers seeking the latest, most-current build versions can use [GitCDN.xyz](//gitcdn.xyz) to
+pull directly from the distribution GitHub
+[Bower-Material](https://github.com/angular/bower-material) repository:
 
-Produces controller and view as above and adds a route to `app/scripts/app.js`
-with URI `my/route`
-
-### Controllers
-Generates a controller in `app/scripts/controllers`.
-
-Example:
-```bash
-yo angular:controller user
-```
-
-Produces `app/scripts/controllers/user.js`:
-```javascript
-angular.module('myMod').controller('UserCtrl', function ($scope) {
-  // ...
-});
-```
-### Directive
-Generates a directive in `app/scripts/directives`.
-
-Example:
-```bash
-yo angular:directive myDirective
-```
-
-Produces `app/scripts/directives/myDirective.js`:
-```javascript
-angular.module('myMod').directive('myDirective', function () {
-  return {
-    template: '<div></div>',
-    restrict: 'E',
-    link: function postLink(scope, element, attrs) {
-      element.text('this is the myDirective directive');
-    }
-  };
-});
-```
-
-### Filter
-Generates a filter in `app/scripts/filters`.
-
-Example:
-```bash
-yo angular:filter myFilter
-```
-
-Produces `app/scripts/filters/myFilter.js`:
-```javascript
-angular.module('myMod').filter('myFilter', function () {
-  return function (input) {
-    return 'myFilter filter:' + input;
-  };
-});
-```
-
-### Views
-Generates an HTML view file in `app/views`.
-
-Example:
-```bash
-yo angular:view user
-```
-
-Produces `app/views/user.html`:
 ```html
-<p>This is the user view</p>
+  <head>
+
+    <!-- Angular Material CSS using GitCDN to load directly from `bower-material/master` -->
+    <link rel="stylesheet" href="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.css">
+
+  </head>
+  <body>
+
+    <!-- Angular Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.js"></script>
+
+    <!-- Angular Material Javascript using GitCDN to load directly from `bower-material/master` -->
+    <script src="https://gitcdn.xyz/repo/angular/bower-material/master/angular-material.js"></script>
+
+  </body>
 ```
 
-### Services
-Generates an AngularJS service.
-
-Example:
-```bash
-yo angular:service myService
-```
-
-Produces `app/scripts/services/myService.js`:
-```javascript
-angular.module('myMod').service('myService', function () {
-  // ...
-});
-```
-
-You can also do `yo angular:factory`, `yo angular:provider`, `yo angular:value`, and `yo angular:constant` for other types of services.
-
-### Decorators
-Generates an AngularJS service decorator.
-
-Example:
-```bash
-yo angular:decorator serviceName
-```
-
-Produces `app/scripts/decorators/serviceNameDecorator.js`:
-```javascript
-angular.module('myMod').config(function ($provide) {
-    $provide.decorator('serviceName', function ($delegate) {
-      // ...
-      return $delegate;
-    });
-  });
-```
-
-## Options
-In general, these options can be applied to any generator, though they only affect generators that produce scripts.
-
-### CoffeeScript
-For generators that output scripts, the `--coffee` option will output CoffeeScript instead of JavaScript.
-
-For example:
-```bash
-yo angular:controller user --coffee
-```
-
-Produces `app/scripts/controller/user.coffee`:
-```coffeescript
-angular.module('myMod')
-  .controller 'UserCtrl', ($scope) ->
-```
-
-A project can mix CoffeScript and JavaScript files.
-
-To output JavaScript files, even if CoffeeScript files exist (the default is to output CoffeeScript files if the generator finds any in the project), use `--coffee=false`.
-
-### Minification Safe
-
-**tl;dr**: You don't need to write annotated code as the build step will
-handle it for you.
-
-By default, generators produce unannotated code. Without annotations, AngularJS's DI system will break when minified. Typically, these annotations that make minification safe are added automatically at build-time, after application files are concatenated, but before they are minified. The annotations are important because minified code will rename variables, making it impossible for AngularJS to infer module names based solely on function parameters.
-
-The recommended build process uses `ng-annotate`, a tool that automatically adds these annotations. However, if you'd rather not use it, you have to add these annotations manually yourself. Why would you do that though? If you find a bug
-in the annotated code, please file an issue at [ng-annotate](https://github.com/olov/ng-annotate/issues).
-
-
-### Add to Index
-By default, new scripts are added to the index.html file. However, this may not always be suitable. Some use cases:
-
-* Manually added to the file
-* Auto-added by a 3rd party plugin
-* Using this generator as a subgenerator
-
-To skip adding them to the index, pass in the skip-add argument:
-```bash
-yo angular:service serviceName --skip-add
-```
-
-## Bower Components
-
-The following packages are always installed by the [app](#app) generator:
-
-* angular
-* angular-mocks
-* angular-scenario
-
-
-The following additional modules are available as components on bower, and installable via `bower install`:
-
-* angular-animate
-* angular-aria
-* angular-cookies
-* angular-messages
-* angular-resource
-* angular-sanitize
-
-All of these can be updated with `bower update` as new versions of AngularJS are released.
-
-## Configuration
-Yeoman generated projects can be further tweaked according to your needs by modifying project files appropriately.
-
-### Output
-You can change the `app` directory by adding a `appPath` property to `bower.json`. For instance, if you wanted to easily integrate with Express.js, you could add the following:
-
-```json
-{
-  "name": "yo-test",
-  "version": "0.0.0",
-  ...
-  "appPath": "public"
-}
-
-```
-This will cause Yeoman-generated client-side files to be placed in `public`.
-
-Note that you can also achieve the same results by adding an `--appPath` option when starting generator:
-```bash
-yo angular [app-name] --appPath=public
-```
-
-## Testing
-
-Running `grunt test` will run the unit tests with karma.

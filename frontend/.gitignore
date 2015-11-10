@@ -1,6 +1,7 @@
-.tmp
-.sass-cache
-.ftppass
+*.log
+.DS_Store
 node_modules
-bower_components
 dist
+/.idea/
+.nvmrc
+tmp/
