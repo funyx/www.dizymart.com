@@ -1,6 +1,6 @@
-node_modules/
-bower_components/
-dist/*
-.tmp/
-.idea/
-config/config.json
+.tmp
+.sass-cache
+.ftppass
+node_modules
+bower_components
+dist
