@@ -20,7 +20,8 @@
     "devDependencies": {},
     "scripts": {
         "install": "git submodule update --init --recursive && cd backend && npm install && cd ../frontend && npm install",
-        "start": "cd ./backend && node ./app.js & cd ./frontend && gulp serve",
+        "start": "cd ./backend && node ./app.js & cd ./frontend && gulp production",
+        "dev": "cd ./backend && node ./app.js & cd ./frontend && gulp serve",
         "test": "cd backend && mocha"
     },
     "repository": {
