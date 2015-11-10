@@ -109,8 +109,8 @@ gulp.task('vendors', function() {
   var bowerStream = mainBowerFiles();
 
   return es.merge(
-    bowerStream.pipe(g.filter('**/*.css')).pipe(dist('css', 'vendors')),
-    bowerStream.pipe(g.filter('**/*.js')).pipe(dist('js', 'vendors'))
+    gulp.src(bowerStream).pipe(g.filter('**/*.css')).pipe(dist('css', 'vendors')),
+    gulp.src(bowerStream).pipe(g.filter('**/*.js')).pipe(dist('js', 'vendors'))
   );
 });
 
@@ -171,7 +171,7 @@ gulp.task('fonts', function() {
  * Dist
  */
 gulp.task('dist', ['vendors', 'assets', 'fonts', 'styles-dist', 'scripts-dist'], function() {
-  return gulp.src('./src/app/index.html')
+  gulp.src('./src/app/index.html')
     .pipe(g.inject(gulp.src('./dist/vendors.min.{js,css}'), {
       ignorePath: 'dist',
       starttag: '<!-- inject:vendor:{{ext}} -->'
@@ -187,6 +187,11 @@ gulp.task('dist', ['vendors', 'assets', 'fonts', 'styles-dist', 'scripts-dist'],
     }))
     .pipe(g.htmlmin(htmlminOpts))
     .pipe(gulp.dest('./dist/'))
+    g.serve({
+      port: settings.frontend.ports.production,
+      root: ['./dist'],
+      middleware: historyApiFallback({})
+    })
   ;
 });
 
@@ -202,11 +207,10 @@ gulp.task('statics', g.serve({
 /**
  * Production file server, note remember to run 'gulp dist' first!
  */
-gulp.task('production', g.serve({
-  port: settings.frontend.ports.production,
-  root: ['./dist'],
-  middleware: historyApiFallback({})
-}));
+// gulp.task('live',['b']);
+// gulp.task('b',['a','production']);
+// gulp.task('a',['dist']);
+// gulp.task('production', );
 
 /**
  * Watch

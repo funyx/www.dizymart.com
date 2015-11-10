@@ -88,26 +88,26 @@ exports.request = function request(log, request, response) {
 
   // Create new log entry
   function writeLog() {
-    sails.models['requestlog']
-      .create({
-        method: log.method,
-        url: log.diagnostic.url,
-        headers: request.headers || {},
-        parameters: log.diagnostic.routeParams,
-        query: log.diagnostic.queryParams,
-        body: log.diagnostic.bodyParams,
-        protocol: log.protocol,
-        ip: log.ip,
-        responseTime: log.responseTime,
-        middlewareLatency: log.diagnostic.middlewareLatency,
-        user: userId
-      })
-      .exec(function exec(error) {
-        if (error) {
-          sails.log.error(__filename + ':' + __line + ' [Failed to write request data to database]');
-          sails.log.error(error);
-        }
-      })
-    ;
+    // sails.models['requestlog']
+    //   .create({
+    //     method: log.method,
+    //     url: log.diagnostic.url,
+    //     headers: request.headers || {},
+    //     parameters: log.diagnostic.routeParams,
+    //     query: log.diagnostic.queryParams,
+    //     body: log.diagnostic.bodyParams,
+    //     protocol: log.protocol,
+    //     ip: log.ip,
+    //     responseTime: log.responseTime,
+    //     middlewareLatency: log.diagnostic.middlewareLatency,
+    //     user: userId
+    //   })
+    //   .exec(function exec(error) {
+    //     if (error) {
+    //       sails.log.error(__filename + ':' + __line + ' [Failed to write request data to database]');
+    //       sails.log.error(error);
+    //     }
+    //   })
+    // ;
   }
 };
