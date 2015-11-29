@@ -15,7 +15,7 @@
     "selenium-webdriver": "^2.45.1"
   },
   "scripts": {
-    "postinstall": "bower isntall --allow-root",
+    "postinstall": "bower install --allow-root",
     "prestart": "npm update",
     "test": "protractor ./e2e/protractor.conf.js"
   }
