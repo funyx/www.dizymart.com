@@ -1,9 +1,9 @@
 {
-  "name": "material-start",
+  "name": "dizymart-frontend",
   "private": true,
-  "version": "0.0.3",
-  "description": "A starter project for AngularJS Material",
-  "repository": "https://github.com/angular/material-start",
+  "version": "0.0.1",
+  "description": "DizyMart Frontend",
+  "repository": "https://github.com/funyx/dizymart",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",

@@ -1,8 +1,8 @@
 {
-  "name": "backend-server",
+  "name": "dizymart-backend",
   "private": true,
-  "version": "0.1.0",
-  "description": "Backend server for angular-sailsjs-boilerplate a Sails application that serves just a JSON API for frontend application",
+  "version": "0.0.1",
+  "description": "API server dizymart-backend application",
   "keywords": [
     "sails.js",
     "backend",
@@ -52,11 +52,8 @@
   "main": "app.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tarlepp/angular-sailsjs-boilerplate.git"
+    "url": "git://github.com/funyx/dizymart"
   },
-  "bugs": {
-    "url": "https://github.com/tarlepp/angular-sailsjs-boilerplate/issues"
-  },
-  "author": "Tarmo Leppänen",
+  "author": "Dimitar Dobchev",
   "license": "MIT"
 }
