@@ -22,8 +22,8 @@
   },
   "scripts": {
     "install": "git submodule update --init --recursive && cd backend && npm install && cd ../frontend && npm install",
-    "start": "cd ./backend && sails lift & cd ./frontend && npm install",
-    "dev": "cd ./backend && sails lift & cd ./frontend && npm install",
+    "start": "cd ./backend && sails lift & cd ./frontend && npm install && bower install --allow-root",
+    "dev": "cd ./backend && sails lift & cd ./frontend && npm install && bower install --allow-root",
     "test": "cd backend && mocha"
   },
   "repository": {
