@@ -15,7 +15,6 @@
     "selenium-webdriver": "^2.45.1"
   },
   "scripts": {
-    /*"postinstall": "bower update",*/
     "prestart": "npm update",
     "test": "protractor ./e2e/protractor.conf.js"
   }
