@@ -1,37 +1,27 @@
 {
   "name": "dizymart.com",
   "version": "0.0.1",
-  "description": "Dizymart example.",
-  "keywords": [
-    "sails.js",
-    "backend",
-    "REST",
-    "API",
-    "JWT",
-    "JSON Web Token",
-    "Passport.js",
-    "frontend",
-    "angular",
-    "slush",
-    "slush-angular"
-  ],
-  "main": "",
-  "dependencies": {},
+  "description": "Dizymart bundle",
+  "keywords": [],
+  "config":{
+    "production" : {
+      "api_port" : 3000,
+      "app_port" : 80
+    },
+    "development" : {
+      "api_port" : 1337,
+      "app_port" : 8080
+    }
+  },
   "devDependencies": {
-    "phantomjs": "^1.9.1-0"
+    "phantomjs": "^1.9.1-0",
+    "shelljs": "^0.5.3"
   },
   "scripts": {
     "install": "git submodule update --init --recursive && cd backend && npm install && cd ../frontend && npm install",
     "start": "cd ./backend && sails lift & cd ./frontend && npm instal && bower install --allow-root",
-    "dev": "cd ./backend && sails lift & cd ./frontend && npm install && bower install --allow-root",
+    "developer": "cd ./backend && sails lift & cd ./frontend && npm install && bower install --allow-root & cd./frontend/app live-reload",
     "test": "cd backend && mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/tarlepp/angular-sailsjs-boilerplate.git"
-  },
-  "bugs": {
-    "url": "https://github.com/tarlepp/angular-sailsjs-boilerplate/issues"
   },
   "author": "funyx <mimo dobchev>",
   "license": "MIT"

@@ -1,6 +1,6 @@
 # dizymart
 
-## SETUP
+## Setup
 
 ### Backend
 - [Sails](http://sailsjs.org) api
@@ -13,14 +13,14 @@
 ### Apps
 - [ionic](http://ionicframework.com/)
 
-## ENV
+## Enviroment
 
-### LIVE
+### Live
 
 - http://api.dizymart.com
 - http://www.dizymart.com
 
-### DEV
+### Development
 
 - http://localhost:1337/
 - http://localhost:8080/

@@ -32,6 +32,9 @@ module.exports.routes = {
     res.send('Welcome to DizyMart API !');
   },
   '/logout': 'AuthController.logout',
+  '/test': function(req,res){
+    res.send('test2');
+  },
   'POST /login': 'AuthController.callback',
   'POST /login/:action': 'AuthController.callback',
   'POST /auth/local': 'AuthController.callback',
