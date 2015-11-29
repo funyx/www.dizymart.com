@@ -19,3 +19,8 @@
 
 - http://api.dizymart.com
 - http://www.dizymart.com
+
+### DEV
+
+- http://localhost:1337/
+- http://localhost:8080/
