@@ -29,7 +29,7 @@ module.exports.routes = {
 
   // Authentication routes
   '/': function(req,res){
-    res.send('Welcome to DizyMart API');
+    res.send('Welcome to DizyMart API !');
   },
   '/logout': 'AuthController.logout',
   'POST /login': 'AuthController.callback',
